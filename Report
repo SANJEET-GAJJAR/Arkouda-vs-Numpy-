@@ -1,0 +1,22 @@
+Used eBay datasets to predict the delivery date. 
+b2c c2c, seller id, declared handling days, acceptance scan timestamp, shipment method id, shipping fee, carrier min estimate, carrier max estimate, item zip, buyer zip, category id etc are some of the features. There are 19 features in total. 
+
+NumpyPandas notebook:
+Extracted 14 features after performing cleaning, preprocessing, and feature engineering to train the model. 
+NumPy and pandas were used to complete the entire feature engineering in this notebook. 
+
+ArkoudaPandas notebook:
+Used Arkouda and pandas for feature engineering in the notebook ArkoudaPanda. 
+Extract 10 features in this notebook to train our model. 
+
+Linear regression is used in both notebooks to predict the delivery date. In both cases, the accuracy was 77%. 
+
+The major focus of this project was to analyse the time it took for both libraries to preprocess the data and train  
+
+In Arkouda based notebook, the preprocessing took 56ms  and in the numpyPandas based notebook, it took 74ms. 
+The difference of 18ms might not seem very much since the dataset used was 200mb. But when it is 1 or 2 terabyte data, the difference will be huge because Arkouda uses parallel processing. 
+
+Arkouda notebook, used 2 parallel processes to process the data. 
+Another advantage of arkouda is it breaks the NumPy and in a datatype of 64byte into whatever bytes it needed for a variable or data type. 
+
+
